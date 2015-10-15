@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+    <!-- url-pattern中配置的/coreServlet用于指定该Servlet的访问路径 -->  
+   <servlet>  
+        <servlet-name>coreServlet</servlet-name>  
+        <servlet-class>  
+            jsp.weixin.servlet.util.CoreServlet  
+        </servlet-class>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>coreServlet</servlet-name>  
+        <url-pattern>/coreServlet.do</url-pattern>  
+    </servlet-mapping> 
+    <!-- OAuth2 -->
+       <servlet>  
+        <servlet-name>oauth2Servlet</servlet-name>  
+        <servlet-class>  
+            jsp.weixin.oauth2.util.OAuth2Servlet  
+        </servlet-class>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>oauth2Servlet</servlet-name>  
+        <url-pattern>/oauth2Servlet</url-pattern>  
+    </servlet-mapping>
+</web-app>
